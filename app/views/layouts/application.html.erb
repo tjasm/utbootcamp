@@ -12,20 +12,22 @@
   <body>
     <header class="row">
       <div class="col-3">
-        <div class="circle">
-        <br />
-        TEST
-        <br />
-        TEST
-        <br />
-        TEST
-      </div>
+        <%= link_to root_path, class: 'logo' do %>
+          <div class="circle">
+          <br />
+          TEST
+          <br />
+          TEST
+          <br />
+          TEST
+          </div>
+        <% end %>
       </div>
       <div class="col-4 slogan">
       YOUR SLOGAN WILL GO HERE. YOUR SLOGAN WILL GO HERE
       </div>
       <div class="col-5 links">
-        <%= link_to 'ADD QUOTE', '#' %>
+        <%= link_to 'Contribute', new_quote_path %>
         <%= link_to 'ABOUT', '#' %>
       </div>
     </header>
@@ -34,6 +36,22 @@
 
     <br class="clear" />
 
-    <%= yield %>
+    <div class="container"
+      <%= yield %>
+    </div>
+
+     <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+              <%= link_to "This isn't enough, I need more", "#", class: 'next-quote' %>
+          </div>
+          <div class="col-6 footer-blurb">
+            Proudly hacked by <a href="[YOUR_PORTFOLIO_URL]">Tierra Moultrie</a><br />
+            Want to build your own Splurty Web App - <a href="https://online.bootcampspot.com">Learn how to code here</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
